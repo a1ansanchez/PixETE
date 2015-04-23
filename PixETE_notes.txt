@@ -1,0 +1,38 @@
+PixETE_notes.txt
+
+#####Notes#####
+# YAW_POS D100 to pos 1234   02 31 31 30 43 38 30 32 44 32 30 34 03 34 43
+# YAW_POS D100 to pos 1235   02 31 31 30 43 38 30 32 44 33 30 34 03 34 44
+
+# Data format
+# START | COMMAND |   PLC ADDRESS | FIXED BYTES |     DATA    | END | SUM
+#                       D100                          1234
+#  02   |   31    |  31 30 43 38  |    30 32    | 44 32 30 34 | 03  | 34 43
+
+# D100   31 30 43 38    
+# D102   31 30 43 43
+# D106   31 30 44 34
+# D110   31 30 44 43 
+# D112   31 30 45 30 
+# D108   31 30 44 38
+
+# EXAMPLE OF DATA TRANSLATION     
+
+# Decimal =  HEX = H <> L =    ASCII Hex
+# 8000    = 1F40 =  401F  = 34 30 31 46       t=format(int(ord('0')),'02X')
+
+# D100 YAW POS    02 31 31 30 43 38 30 32 34 30 31 46 03 34 44
+# D102 YAW_SPEED  02 31 31 30 43 43 30 32 34 30 31 46 03 35 38
+# D110 ROLL_POS   02 31 31 30 44 43 30 32 36 30 30 39 03 34 44
+# D112 ROLL_SPEED 02 31 31 30 45 30 30 32 36 30 30 39 03 33 42
+# D106 RUN   22   02 31 31 30 44 34 30 32 32 32 30 30 03 33 33
+# D106 RESET 44   02 31 31 30 44 34 30 32 34 34 30 30 03 33 37
+
+# 02 31 31 30 43 38 30 32 38 38 31 33 03 34 36
+
+
+#Hexadecimal addition example:
+# def add_hex2(hex1, hex2):
+#     """add two hexadecimal string values and return as such"""
+#     return hex(int(hex1, 16) + int(hex2, 16))
+# print add_hex2('0xff', '0xff')  # 0x1fe

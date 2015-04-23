@@ -1,0 +1,9 @@
+PixETE_commands.txt
+
+yaw_pos + position
+yaw_speed + speed
+roll_pos + position
+roll_speed + speed
+accel + acceleration
+reset reset
+run run
