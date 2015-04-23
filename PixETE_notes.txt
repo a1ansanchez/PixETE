@@ -1,4 +1,4 @@
-PixETE_notes.txt
+PixETE_notes
 
 #####Notes#####
 # YAW_POS D100 to pos 1234   02 31 31 30 43 38 30 32 44 32 30 34 03 34 43

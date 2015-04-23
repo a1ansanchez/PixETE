@@ -1,9 +1,12 @@
-PixETE_commands.txt
+PixETE_commands
 
-yaw_pos + position
-yaw_speed + speed
-roll_pos + position
-roll_speed + speed
-accel + acceleration
+yaw_pos + 'position'
+yaw_speed + 'speed'
+roll_pos + 'position'
+roll_speed + 'speed'
+accel + 'acceleration'
 reset reset
 run run
+
+
+Range for 'speed', 'position', 'acceleration' is 0 to 65535
