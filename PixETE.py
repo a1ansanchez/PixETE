@@ -10,15 +10,16 @@ end = "03"
 run =        "31 30 44 34 " #D106 this is the same as reset. Double check!!!
 reset =      "31 30 44 34 " 
 #Addresses
-# yaw_pos =    "31 30 43 38 " #D100
-# yaw_speed =  "31 30 43 43 " #D102
-# roll_pos =   "31 30 44 43 " #D110 
-# roll_speed = "31 30 45 30 " #D112 
-# run =        "31 30 44 34"  #D106
-# reset =      "31 30 44 34"  #D106 
-# ??? =        "31 30 44 38"  #D108???what is this?
-ADDRESS={'yaw_pos': '31 30 43 38 ', 'yaw_speed' : '31 30 43 43 ',
- 'roll_pos': '31 30 44 43 ', 'roll_speed': '31 30 45 30 ', 'run': '31 30 44 34', 'reset':'31 30 44 34'}  #Command dictionary
+# yaw_pos =      "31 30 43 38 " #D100
+# yaw_speed =    "31 30 43 43 " #D102
+# roll_pos =     "31 30 44 43 " #D110 
+# roll_speed =   "31 30 45 30 " #D112 
+# run =          "31 30 44 34"  #D106
+# reset =        "31 30 44 34"  #D106 
+# accel = "31 30 44 38"  #D108 Need to verify this is indeed acceleration
+ADDRESS={'yaw_pos': '31 30 43 38 ', 'yaw_speed' :'31 30 43 43 ',
+ 'roll_pos': '31 30 44 43 ', 'roll_speed': '31 30 45 30 ', 
+ 'run':'31 30 44 34 ', 'reset':'31 30 44 34 ', 'accel':'31 30 44 34 '}  #Command dictionary
 
 #-- Data Translation ------------------
 if d == 'run':
