@@ -18,16 +18,16 @@ reset =      "31 30 44 34 "
 # reset =      "31 30 44 34"  #D106 
 # ??? =        "31 30 44 38"  #D108???what is this?
 ADDRESS={'yaw_pos': '31 30 43 38 ', 'yaw_speed' : '31 30 43 43 ',
- 'roll_pos': '31 30 44 43 ', 'roll_speed': '31 30 45 30 '}  #Command dictionary
+ 'roll_pos': '31 30 44 43 ', 'roll_speed': '31 30 45 30 ', 'run': '31 30 44 34', 'reset':'31 30 44 34'}  #Command dictionary
 
 #-- Data Translation ------------------
 if d == 'run':
 	PixETE_run =   "02 31 31 30 44 34 30 32 32 32 30 30 03 33 33"
-	data = PixETE_run
+	print PixETE_run
 	pass
 elif d== 'reset':
 	PixETE_reset = "02 31 31 30 44 34 30 32 34 34 30 30 03 33 37"
-	data = PixETE_reset
+	print PixETE_reset
 	pass
 else:
 
@@ -62,15 +62,11 @@ else:
 	size = len(o)
 	ck2 = ' %s' %o[size-1]
 	ck1 = ' %s' %o[size-2]
-
+	#Print PixETE commands:
+	PixETE = start+cmd+ADDRESS[address]+fixed_bytes+data+end+ck1+ck2 
+	print PixETE
 	pass
 
-#---------------------------------------
-
-
-#Print PixETE commands:
-PixETE = start+cmd+ADDRESS[address]+fixed_bytes+data+end+ck1+ck2 
-print PixETE
 
 #-- END --------------------------------
 
