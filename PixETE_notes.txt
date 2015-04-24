@@ -36,3 +36,13 @@ PixETE_notes
 #     """add two hexadecimal string values and return as such"""
 #     return hex(int(hex1, 16) + int(hex2, 16))
 # print add_hex2('0xff', '0xff')  # 0x1fe
+
+
+#Addresses
+# yaw_pos =      "31 30 43 38 " #D100
+# yaw_speed =    "31 30 43 43 " #D102
+# roll_pos =     "31 30 44 43 " #D110 
+# roll_speed =   "31 30 45 30 " #D112 
+# run =          "31 30 44 34"  #D106
+# reset =        "31 30 44 34"  #D106 
+# accel = "31 30 44 38"  #D108 Need to verify this is indeed acceleration

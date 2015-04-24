@@ -9,45 +9,30 @@ fixed_bytes ="30 32 "
 end = "03"
 run =        "31 30 44 34 " #D106 this is the same as reset. Double check!!!
 reset =      "31 30 44 34 " 
+
 #Addresses
-# yaw_pos =      "31 30 43 38 " #D100
-# yaw_speed =    "31 30 43 43 " #D102
-# roll_pos =     "31 30 44 43 " #D110 
-# roll_speed =   "31 30 45 30 " #D112 
-# run =          "31 30 44 34"  #D106
-# reset =        "31 30 44 34"  #D106 
-# accel = "31 30 44 38"  #D108 Need to verify this is indeed acceleration
 ADDRESS={'yaw_pos': '31 30 43 38 ', 'yaw_speed' :'31 30 43 43 ',
  'roll_pos': '31 30 44 43 ', 'roll_speed': '31 30 45 30 ', 
  'run':'31 30 44 34 ', 'reset':'31 30 44 34 ', 'accel':'31 30 44 34 '}  #Command dictionary
 
 #-- Data Translation ------------------
+
 if d == 'run':
 	PixETE_run =   "02 31 31 30 44 34 30 32 32 32 30 30 03 33 33"
 	print PixETE_run
 	pass
-elif d== 'reset':
+elif d == 'reset':
 	PixETE_reset = "02 31 31 30 44 34 30 32 34 34 30 30 03 33 37"
 	print PixETE_reset
 	pass
 else:
-
-	ndec = int(d, base=10) #convert input to dec
+	ndec = int(d, 10) #convert input to dec
 	nhex = format(ndec, '04X') #convert dec to hex
 	HLhex = nhex[2]+nhex[3]+nhex[0]+nhex[1] #swap hi and low
 	shex = '%s' %HLhex #convert hex to string
 	idec = [ord(i) for i in shex]#convert each charachter to ascii decimal
 	ihex = [format(i,'02X') for i in idec]#convert each ascii decimal to hex
-
-	data = '%s %s %s %s '% (ihex[0], ihex[1], ihex[2], ihex[3])
-	#checks 
-	# print "Your decimal number is %d" %ndec
-	# print "Your hexadecimal number is %s" %nhex
-	# print "Your hexadecimal H <> L number is %s" %HLhex
-	# print shex
-	# print idec
-	# print "Your hex ascii decimal is"
-	# print ihex
+	data = '%s %s %s %s '% (ihex[0], ihex[1], ihex[2], ihex[3]) #Data field for PixETE message
 
 	#-- Checksum calculation --------------
 
@@ -67,5 +52,3 @@ else:
 	PixETE = start+cmd+ADDRESS[address]+fixed_bytes+data+end+ck1+ck2 
 	print PixETE
 	pass
-
-
